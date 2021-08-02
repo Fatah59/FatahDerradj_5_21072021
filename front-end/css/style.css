@@ -1,3 +1,6 @@
+/* --------- */
+/*Index page */
+
 body {
     margin: 0;
     background: #f6f6f6;
@@ -87,7 +90,7 @@ a:hover {
     color: #f6f6f6;
 }
 
-.products-list-card {
+.products-list-card, .product-detail-card {
     display: flex;
     flex-direction: column;
     max-width: 500px;
@@ -103,7 +106,7 @@ a:hover {
     transform: scale(1.03);
 }
 
-.products-list-image {
+.products-list-image, .product-detail-image {
     width: 100%;
 }
 
@@ -114,19 +117,20 @@ a:hover {
     padding: 1rem;
 }
 
-.products-list-content h3 {
+.products-list-content h3, .product-detail-content h3 {
     width: 100%;
 }
 
-.products-list-price {
+.products-list-price, .product-detail-price {
     font-weight: 800;
     font-size: 1.2rem;
+    text-align: end;
 } 
 
 .footer {
     position: relative;
     background: grey;
-    margin-top: 6rem;
+    margin-top: 4rem;
     padding: 20px 0;
     text-align: center;
     font-weight: 800;
@@ -139,4 +143,31 @@ a:hover {
 
 .footer-link:hover {
     transform: scale(1.03);
+}
+
+/* ------------ */
+/* Product page */
+
+.product-detail-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1rem;
+}
+
+.product-form {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    margin: 1rem 0;
+}
+
+.product-form-buttons {
+    display: flex;
+    flex-direction: column;
+}
+
+.btn-cart, .btn-back {
+    border: 1px solid #aaa;
+    background-color: #ddd;
 }
