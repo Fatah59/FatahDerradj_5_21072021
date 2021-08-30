@@ -60,40 +60,27 @@ fetchDetail().then((cameraDetail) => {
     };
 
     // Local storage
-
     // Déclaration de la variable contenant les key et les values du local storage
     let productCart = JSON.parse(localStorage.getItem('panier'));
 
-    // Pop up de confirmation
-    const popupConfirm = () => {
-      if (
-        window.confirm(`${cameraDetail.name} a bien été ajouté au panier !
-Cliquez sur OK pour consulter le panier ou cliquez sur ANNULER pour continuer vos achats en revenant sur l'accueil`)
-      ) {
-        window.location.href = './panier.html';
-      } else {
-        window.location.href = '../index.html';
-      }
-    };
-
     // Fonction pour ajouter un produit au local storage
     const addProduct = () => {
-      // Ajout du produit dans le tableau 
+      // Ajout du produit dans le tableau
       productCart.push(product);
       // Transformation en format JSON pour envoyer le tableau dans la key "panier" du local storage
       localStorage.setItem('panier', JSON.stringify(productCart));
-    }
+    };
 
     // S'il y a des produits enregistré dans le local storage
     if (productCart) {
       addProduct();
-      popupConfirm();
+      window.location.reload();
     }
     // S'il n'y a pas de produits enregistré dans le local storage
     else {
       productCart = [];
       addProduct();
-      popupConfirm();
+      window.location.reload();
     }
   });
 });

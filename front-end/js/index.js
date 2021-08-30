@@ -1,17 +1,21 @@
 function fetchCamera() {
-    let url = 'http://localhost:3000/api/cameras'
-    return fetch(url) 
-            .then(response => response.json())
+  let url = 'http://localhost:3000/api/cameras';
+  return fetch(url).then((response) => response.json());
 }
 
-fetchCamera() .then((cameraList) => {
-    console.log(cameraList);
+fetchCamera()
+  .then((cameraList) => {
     let affichage = '<div class="row">';
-    for(let camera of cameraList){
-        affichage += `<div class="col-12 col-md-6 col-lg-6">
+    // Affichage de la liste des produits
+    for (let camera of cameraList) {
+      affichage += `<div class="col-12 col-md-6 col-lg-6">
         <div class="products-list">
-        <a href="./pages/produit.html?id=${camera._id}" class="products-list-card">
-        <img class="products-list-image" src="${camera.imageUrl}" alt="image de l'appareil photo ${camera.name}">
+        <a href="./pages/produit.html?id=${
+          camera._id
+        }" class="products-list-card">
+        <img class="products-list-image" src="${
+          camera.imageUrl
+        }" alt="image de l'appareil photo ${camera.name}">
         <div class="products-list-content">
         <h3>${camera.name}</h3>
         <p class="products-list-price">${camera.price / 100} €</p>
@@ -19,8 +23,9 @@ fetchCamera() .then((cameraList) => {
         </div>
         </a>
         </div>
-        </div>`   
+        </div>`;
     }
     affichage += '</div>';
-    document.querySelector("#products").innerHTML = affichage;
-}).catch(err => console.log('Erreur : ' + err));
+    document.querySelector('#products').innerHTML = affichage;
+  })
+  .catch((err) => console.log('Erreur : ' + err));

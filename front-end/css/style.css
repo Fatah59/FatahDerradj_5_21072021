@@ -1,4 +1,4 @@
-/* --------- */
+/* ----------------------------------------------------------- */
 /*Index page */
 
 body {
@@ -63,6 +63,18 @@ a:hover {
     right: 0;
 }
 
+.navbar-brand {
+    font-size: 1.5rem;
+}
+
+.fa-shopping-cart {
+    font-size: 0.5rem;
+}
+
+.fa-layers-counter {
+    font-size: 50px;
+}
+
 .navbar-brand, .nav-link, .fa-shopping-cart {
     color: #000000;
     transition: transform 300ms;
@@ -74,7 +86,7 @@ a:hover {
 }
 
 .hero {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.4)),url("../images/hero-background.jpg");
+    background-image: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.4)), url("../images/hero-background.jpg");
     height: 100vh;
     background-position: center;
     background-repeat: no-repeat;
@@ -125,12 +137,12 @@ a:hover {
     font-weight: 800;
     font-size: 1.2rem;
     text-align: end;
-} 
+}
 
 .footer {
     position: relative;
     background: grey;
-    margin-top: 4rem;
+    margin-top: 5rem;
     padding: 20px 0;
     text-align: center;
     font-weight: 800;
@@ -145,7 +157,7 @@ a:hover {
     transform: scale(1.03);
 }
 
-/* ------------ */
+/* ----------------------------------------------------------- */
 /* Product page */
 
 .product-detail-content {
@@ -167,7 +179,37 @@ a:hover {
     flex-direction: column;
 }
 
-.btn-cart, .btn-back {
+.btn-cart, .btn-back, .btn-order {
     border: 1px solid #aaa;
     background-color: #ddd;
+}
+
+/* ----------------------------------------------------------- */
+/* Cart page */
+
+#cartProductImage {
+    max-width: 90px;
+}
+
+.form-form-buttons {
+    display: flex;
+    flex-direction: column;
+}
+
+.fa-trash {
+    cursor: pointer;
+    transition: transform 300ms;
+}
+
+.fa-trash:hover {
+    transform: scale(1.03);
+    color: #FF253A;
+}
+
+#cart {
+    margin-bottom: 135px;
+}
+
+#form {
+    margin-bottom: 135px;
 }
