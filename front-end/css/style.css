@@ -179,13 +179,22 @@ a:hover {
     flex-direction: column;
 }
 
-.btn-cart, .btn-back, .btn-order {
+.btn-cart, .btn-back, .btn-order, .btn-products-back {
     border: 1px solid #aaa;
     background-color: #ddd;
 }
 
 /* ----------------------------------------------------------- */
 /* Cart page */
+
+.cart-empty {
+    height: 600px;
+}
+
+.btn-products-back {
+    border: 1px solid #aaa;
+    background-color: #ddd;
+}
 
 #cartProductImage {
     max-width: 90px;
@@ -212,4 +221,11 @@ a:hover {
 
 #form {
     margin-bottom: 135px;
+}
+
+/* ----------------------------------------------------------- */
+/* Confirmation page */
+
+.customer-message {
+    font-size: 20px;
 }
