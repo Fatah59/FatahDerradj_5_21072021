@@ -35,7 +35,7 @@ if (productCart === null || productCart.length == 0) {
   emptyCart += `</div>`;
   document.querySelector('#cart').innerHTML = emptyCart;
 } else {
-  // Si le panier n'est pas vide : récupération du contenu du local storage //
+  // Si le panier n'est pas vide : récupération du contenu du local storage
   let listCart = '';
   for (let i = 0; i < productCart.length; i++) {
     let product = productCart[i];
@@ -49,8 +49,8 @@ if (productCart === null || productCart.length == 0) {
     </tr>`;
   }
 
+  // HTML affichant le contenu du panier
   let affichage = '<table class="table table-hover">';
-
   affichage += `<thead>
   <tr>
   <th scope="col">#</th>
@@ -72,7 +72,7 @@ if (productCart === null || productCart.length == 0) {
   affichage += '</table>';
   document.querySelector('#cart').innerHTML = affichage;
 
-  // Affichage du formulaire
+  // Affichage du formulaire "coordonnées"
   let formAffichage = '<div class="container">';
 
   formAffichage += `<h2>Vos coordonnées</h2>
@@ -117,14 +117,14 @@ if (productCart === null || productCart.length == 0) {
 }
 
 // Validation de la commande
-// Sélectionner le bouton valider la commande
+// Sélection du bouton valider la commande
 const formOrder = document.querySelector('#formOrder');
 
 // Écouter le bouton et ajouter le panier
 formOrder.addEventListener('submit', (event) => {
   event.preventDefault();
 
-  //  récupération du formulaire de coordonnées
+  //  récupération du formulaire de coordonnées et création d'un tableau products
   let customerOrder = {
     contact: {
       firstName: document.getElementById('inputFirstName').value,
@@ -139,7 +139,7 @@ formOrder.addEventListener('submit', (event) => {
   // Récupération des _id des articles du panier dans le local storage
   let panier = JSON.parse(localStorage.getItem('panier'));
   for (let item of panier) {
-    // Mettre les -id récupéré dans le tableau products
+    // Mettre les _id récupéré dans le tableau products
     customerOrder.products.push(item._id);
   }
 

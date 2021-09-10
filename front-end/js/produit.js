@@ -2,22 +2,26 @@
 const params = new URLSearchParams(window.location.search);
 const cameraId = params.get('id');
 
-// Modification de l'adresse d'appel à l'API
+// Modification de l'adresse d'appel à l'API en utilisant l'id
 const cameraUrl = `http://localhost:3000/api/cameras/${cameraId}`;
 
+// Fonction pour récupérer les détails du produits
 function fetchDetail() {
   return fetch(cameraUrl).then((response) => response.json());
 }
 
 // Récupération des détails du produit //
 fetchDetail().then((cameraDetail) => {
+  // Déclaration de la variable pour les tailles d'objectif
   let lensesSelect = `<label for="lense-select">Taile de l'objectif:</label>
   <select name="lense" id="lense-select">`;
+  // Boucle pour afficher les tailles d'objectif
   for (let lense of cameraDetail.lenses) {
     lensesSelect += `<option value="lense">${lense}</option>`;
   }
   lensesSelect += `</select>`;
 
+  // HTML pour l'affichage du produit 
   let affichage = '<div class="row">';
   affichage += `<div class="col-12 col-md-12 col-lg-12">
   <div class="product-detail">
