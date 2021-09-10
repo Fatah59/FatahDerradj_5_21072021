@@ -1,3 +1,4 @@
+// Fonction pour afficher le nombre d'article dans le panier via un compteur sur le logo panier
 function counter(){
 // Initialisation de la varaible count et récupération du contenu de la clé panier 
 let count = 0;
