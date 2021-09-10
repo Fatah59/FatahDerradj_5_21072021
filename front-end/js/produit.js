@@ -48,10 +48,10 @@ fetchDetail().then((cameraDetail) => {
 
   // Gestion du panier //
   // Sélectionner le bouton ajouter au panier
-  const btn_addCart = document.querySelector('.btn-cart');
+  const btnAddCart = document.querySelector('.btn-cart');
 
   // Écouter le bouton et ajouter le panier
-  btn_addCart.addEventListener('click', (event) => {
+  btnAddCart.addEventListener('click', (event) => {
     event.preventDefault();
 
     // récupération de la commande
